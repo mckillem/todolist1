@@ -1,14 +1,18 @@
 'use strict';
 
 // Declare app level module which depends on views, and core components
-angular.module('myApp', [
+angular.module('todoList', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
+  'todoList.projects',
+  'todoList.tasks',
+  "todoList.dashboard",
+  "todoList.logIn",
+  "todoList.users",
+
+  'todoList.version'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');
 
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  $routeProvider.otherwise({redirectTo: '/logIn'});
 }]);
